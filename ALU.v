@@ -42,13 +42,12 @@ always @(posedge CLK) begin
 		FLAG_EQUAL        <= 1'b0;
 		FLAG_GREATER_THAN <= 1'b0;
 		FLAG_LESS_THAN    <= 1'b0;
-	end else begin
-		if (CMP) begin
-			FLAG_ZERO         <= (LEFT == 16'd0);
-			FLAG_EQUAL        <= (LEFT == RIGHT);
-			FLAG_GREATER_THAN <= (LEFT >  RIGHT);
-			FLAG_LESS_THAN    <= (LEFT <  RIGHT);
-		end
+	end
+	else if (CMP) begin
+		FLAG_ZERO         <= (LEFT == 16'd0);
+		FLAG_EQUAL        <= (LEFT == RIGHT);
+		FLAG_GREATER_THAN <= (LEFT >  RIGHT);
+		FLAG_LESS_THAN    <= (LEFT <  RIGHT);
 	end
 end
 
