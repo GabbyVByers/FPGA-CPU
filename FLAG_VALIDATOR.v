@@ -12,7 +12,7 @@ wire INVERT_FLAG         = CURRENT_FLAG[2];
 wire SELECTED_FLAG = (CURRENT_FLAG[1:0] == 2'd0)? ZERO_FLAG         :
                      (CURRENT_FLAG[1:0] == 2'd1)? EQUAL_FLAG        :
                      (CURRENT_FLAG[1:0] == 2'd2)? GREATER_THAN_FLAG :
-                     (CURRENT_FLAG[1:0] == 2'd3)? LESS_THAN_FLAG    : 1'd0;
+                     (CURRENT_FLAG[1:0] == 2'd3)? LESS_THAN_FLAG    : ZERO_FLAG;
 
 assign FLAGS_ARE_VALID = (!FLAG_MUST_BE_TESTED) | ((INVERT_FLAG) ^ (SELECTED_FLAG));
 							
