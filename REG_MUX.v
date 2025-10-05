@@ -13,4 +13,3 @@ assign R = (Select == 2'd0)? R0 :
            (Select == 2'd3)? R3 : R0;
 
 endmodule
-

@@ -156,4 +156,3 @@ assign always_allowed_control_lines[4:0]   = 5'd0;
 assign control_lines = (flags_valid)? rom_data : always_allowed_control_lines;
 
 endmodule
-

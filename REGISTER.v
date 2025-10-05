@@ -3,7 +3,7 @@ module REGISTER (
 	input  wire        RST,
 	input  wire        LOAD,
 	input  wire [15:0] DATA_BUS,
-	output wire [15:0] REG
+	output reg  [15:0] REG
 );
 
 always @(posedge CLK) begin
@@ -16,4 +16,3 @@ always @(posedge CLK) begin
 end
 
 endmodule
-

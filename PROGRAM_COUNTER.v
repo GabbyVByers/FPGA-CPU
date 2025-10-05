@@ -4,7 +4,7 @@ module PROGRAM_COUNTER (
 	input  wire        INC,
 	input  wire        LOAD,
 	input  wire [15:0] DATA_BUS,
-	output wire [15:0] PC
+	output reg  [15:0] PC
 );
 
 always @(posedge CLK) begin
@@ -20,4 +20,3 @@ always @(posedge CLK) begin
 end
 
 endmodule
-
