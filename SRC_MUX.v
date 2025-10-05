@@ -1,15 +1,15 @@
 module SRC_MUX (
 	input  wire [1:0]  SRC_SELECTION,
-	input  wire [15:0] SRC0,
-	input  wire [15:0] SRC1,
-	input  wire [15:0] SRC2,
-	input  wire [15:0] SRC3,
-	output wire [15:0] SRC
+	input  wire [15:0] SRC_A,
+	input  wire [15:0] SRC_B,
+	input  wire [15:0] SRC_C,
+	input  wire [15:0] SRC_D,
+	output wire [15:0] SRC_OUT
 );
 
-assign SRC = (SRC_SELECTION == 2'd0)? SRC0 :
-             (SRC_SELECTION == 2'd1)? SRC1 :
-             (SRC_SELECTION == 2'd2)? SRC2 :
-             (SRC_SELECTION == 2'd3)? SRC3 : SRC0;
+assign SRC_OUT = (SRC_SELECTION == 2'd0)? SRC_A :
+                 (SRC_SELECTION == 2'd1)? SRC_B :
+                 (SRC_SELECTION == 2'd2)? SRC_C :
+                 (SRC_SELECTION == 2'd3)? SRC_D : SRC_A;
 
 endmodule
