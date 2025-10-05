@@ -1,15 +1,15 @@
 module REG_MUX (
 	input  wire [1:0]  Select,
-	input  wire [15:0] R0,
-	input  wire [15:0] R1,
-	input  wire [15:0] R2,
-	input  wire [15:0] R3,
-	output wire [15:0] R
+	input  wire [15:0] THE_REG0,
+	input  wire [15:0] THE_REG1,
+	input  wire [15:0] THE_REG2,
+	input  wire [15:0] THE_REG3,
+	output wire [15:0] THE_REG
 );
 
-assign R = (Select == 2'd0)? R0 :
-           (Select == 2'd1)? R1 :
-           (Select == 2'd2)? R2 :
-           (Select == 2'd3)? R3 : R0;
+assign THE_REG = (Select == 2'd0)? THE_REG0 :
+                 (Select == 2'd1)? THE_REG1 :
+                 (Select == 2'd2)? THE_REG2 :
+                 (Select == 2'd3)? THE_REG3 : THE_REG0;
 
 endmodule
