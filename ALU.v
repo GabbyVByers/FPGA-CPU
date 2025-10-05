@@ -1,22 +1,22 @@
 module ALU (
-	input wire [15:0] LEFT,
-	input wire [15:0] RIGHT,
-	input wire CLK,
-	input wire RST,
-	input wire SHR,
-	input wire SHL,
-	input wire ADD,
-	input wire SUB,
-	input wire AND,
-	input wire ORR,
-	input wire XOR,
-	input wire CMP,
+	input  wire [15:0] LEFT,
+	input  wire [15:0] RIGHT,
+	input  wire        CLK,
+	input  wire        RST,
+	input  wire        SHR,
+	input  wire        SHL,
+	input  wire        ADD,
+	input  wire        SUB,
+	input  wire        AND,
+	input  wire        ORR,
+	input  wire        XOR,
+	input  wire        CMP,
 	
 	output wire [15:0] RESULT,
-	output reg FLAG_ZERO,
-	output reg FLAG_EQUAL,
-	output reg FLAG_GREATER_THAN,
-	output reg FLAG_LESS_THAN
+	output reg         FLAG_ZERO,
+	output reg         FLAG_EQUAL,
+	output reg         FLAG_GREATER_THAN,
+	output reg         FLAG_LESS_THAN
 );
 
 wire [15:0] A_SHIFT_RIGHT = LEFT >> 1;
@@ -33,8 +33,7 @@ assign RESULT = (SHR) ? A_SHIFT_RIGHT :
                 (SUB) ? A_MINUS_B     :
                 (AND) ? A_AND_B       :
                 (ORR) ? A_ORR_B       :
-                (XOR) ? A_XOR_B       :
-                16'd0;
+                (XOR) ? A_XOR_B       : 16'd0;
 
 always @(posedge CLK) begin
 	if (RST) begin

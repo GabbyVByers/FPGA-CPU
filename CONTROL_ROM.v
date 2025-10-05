@@ -5,9 +5,8 @@ module CONTROL_ROM (
 	output wire [31:0] control_lines
 );
 
-reg [31:0] rom_data;
-wire [6:0] rom_input;
-assign rom_input = {instruction[4:0], micro_counter};
+reg  [31:0] rom_data;
+wire [6:0]  rom_input = {instruction[4:0], micro_counter};
 
 always @(*) begin
 	case (rom_input)
